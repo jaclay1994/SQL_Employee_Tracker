@@ -146,7 +146,7 @@ const managerAdd = () => {
 }
 
 const employeeAdd = () => {
-    connection.query('SELECT * FROM role_id manager', (err, results) => {
+    connection.query('SELECT * FROM role_id', (err, results) => {
         inquirer
             .prompt([
                 {
@@ -177,7 +177,9 @@ const employeeAdd = () => {
                     choices() {
                         const managerArray = [];
                         results.forEach(({ id, first_name, last_name }) => {
+                            connection.query('SELECT * FROM manager', (err, results) => {
                             managerArray.push(id + " " + first_name + " " + last_name);
+                            })
                         });
                         return managerArray
                     },
