@@ -1,5 +1,5 @@
 {
-  "name": "SQL_Employee_Tracker",
+  "name": "sql_employee_tracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
